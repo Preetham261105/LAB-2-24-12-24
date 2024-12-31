@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="es.css">
+    <title>Document</title>
+
+
+<style>
+    *{  background-color: black;
+        color:white;
+        padding: 0px ;
+       box-sizing: border-box;
+    }
+    
+    body{ 
+        margin: 70px 70px;
+        background-color: rgb(172, 168, 168);
+        border: 1px solid white;
+    }
+    h1{
+        margin: 20px 20px;
+        color: white;
+        border:2px solid white;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        border-radius: 2px;
+    }
+    
+    h3{ 
+        color:white;
+        margin: 20px 20px;
+        background-color: rgb(172, 168, 168);
+        font-size: 30px;
+    }
+    
+    .board{
+        margin: 20px 20px;
+        border:1px solid white;
+        background-color: rgb(3, 3, 3);
+        padding: 15px 40px;
+        border-radius: 15px;
+    }
+    
+    button{
+        margin: 20px 20px;
+        border:2px solid white;
+        background-color: black;
+        border-radius: 20px;
+        padding: 15px;
+        color: aqua;
+        font-size: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    
+    .forms,.forming,.styling,#styledText,.OGtext,#text,.op,.hovering,#hoverText{
+        background-color: rgb(172, 168, 168);
+    }
+    
+    #styledText,#hoverText,#text{
+        margin: 20px 20px;
+    }
+</style>
+</head>
+<body>
+<h1> WT Manager</h1><br>
+<h3>Dynamic features :</h3>
+<br>
+<button onclick="jumpscare()"> Suprise!!</button><br><br>
+<div class="forms">
+    <form class="forming" onsubmit ="validateForm(event)">
+    <input type="text" id="name" class="board"  placeholder="Enter your name" required><br><br>
+    <button type="submit">Submit</button>
+    </form>
+    <script>
+        function jumpscare(){
+            return alert("Welcome to WT Management  !!")
+        }
+        function validateForm(event) {
+            const name = document.getElementById("name").value;
+            if (name.trim() === "") {
+                alert("Name cannot be empty!");
+            } else {
+                alert(`Hello, ${name}!`);
+            }
+        }
+    </script>    
+</div>
+<br>
+<div class="OGtext">
+<p id="text">Original Text</p>
+<br>
+<button onclick="changeText()">Change Text</button>
+<script>
+    function changeText() {
+        document.getElementById("text").
+        innerText = "Text has been changed!";
+
+        const i = document.getElementById("text");
+
+        i.style.fontFamily = "Verdana"
+        i.style.fontSize = "50px"
+    }
+</script>
+</div>
+<br>
+<div class="styling">
+<p id="styledText">Style me!</p><br>
+<button onclick="toggleStyle()">Toggle Style</button>
+<script>
+    function toggleStyle() {
+        const element = document.getElementById("styledText");
+        element.style.color = element.style.color === "blue" ? "orange" : "blue" ;
+        element.style.fontSize = "40px";
+        element.style.backgroundColor = "Black";
+        element.style.padding = "20px"
+        element.style.border = "3px solid aqua";
+    }
+</script>
+</div>
+<br>
+<div class="hovering">
+<p id="hoverText" style="font-size:20px;">Hover over me!</p>
+<script>
+    document.getElementById("hoverText").onmouseover = function () {
+        this.style.color = "green";
+        this.style.fontFamily = "Verdana"
+        this.style.fontSize = "40px"
+    };
+    document.getElementById("hoverText").onmouseout = function () {
+        this.style.color = "black";
+         this.style.fontSize = "20px"
+    };
+</script>
+</div>
+
+<div class="op">
+    <button onclick="operate()"> Operations</button>
+<script>
+    function operate(){
+    let a = Number(prompt("Enter a?:"));
+    let b = Number(prompt("Enter b?:"));
+    let c = Number(prompt("Enter c?:"));
+    let d = Number(prompt("Enter d?:"));
+    
+    const sum = a + b;
+    const diff = c - d;
+    
+    alert(`Sum is : ${sum}`);
+    alert(`Difference is : ${diff}`);}
+</script>
+</div>
+<br>
+<button onclick="window.print()">Print Page</button>
+<br><br>
+</body>
+</html>
